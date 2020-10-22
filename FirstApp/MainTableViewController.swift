@@ -36,7 +36,7 @@ class MainTableViewController: UIViewController {
         cv.register(CaluculateViewCell.self, forCellWithReuseIdentifier: cellID)
         cv.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerID")
 
-        
+        cv.contentInset.bottom = 20
         return cv
     }()
     
@@ -88,11 +88,12 @@ class MainTableViewController: UIViewController {
         collectionView.backgroundColor = .white
         //collectionView全体の位置を下にしたい。
         
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
-        
+        collectionView.contentInsetAdjustmentBehavior = .never
+        collectionView.contentInset.bottom = 20
         
         
         collectionView.delegate = self
@@ -145,14 +146,15 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
     //header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerID, for: indexPath) as! HeaderView
-        header.frame = CGRect(x: 0, y: 0, width:view.frame.width, height: 200)
+        header.frame = CGRect(x: 0, y: 0, width:view.frame.width, height: 20)
         header.backgroundColor = .blue
         return header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        let size = CGSize(width: view.frame.width, height: 20)
         
-        return.init(width:view.frame.width, height:  10)
+        return size
     }
     
    
