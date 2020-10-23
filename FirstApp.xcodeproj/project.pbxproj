@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		77BC993D2542F3FD009ED696 /* CalucuratecollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BC993C2542F3FD009ED696 /* CalucuratecollectionViewCell.swift */; };
 		77C187672530677500205502 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77C187662530677500205502 /* MainTableViewController.swift */; };
 		77DAB8482525DC9600AF6C47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAB8472525DC9600AF6C47 /* AppDelegate.swift */; };
 		77DAB84F2525DC9800AF6C47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 77DAB84E2525DC9800AF6C47 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		77BC993C2542F3FD009ED696 /* CalucuratecollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalucuratecollectionViewCell.swift; sourceTree = "<group>"; };
 		77C187662530677500205502 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		77DAB8442525DC9600AF6C47 /* FirstApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FirstApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		77DAB8472525DC9600AF6C47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +59,7 @@
 				77DAB8472525DC9600AF6C47 /* AppDelegate.swift */,
 				77C187662530677500205502 /* MainTableViewController.swift */,
 				77FD457A253BF8BF007774BF /* HeaderView.swift */,
+				77BC993C2542F3FD009ED696 /* CalucuratecollectionViewCell.swift */,
 				77DAB84E2525DC9800AF6C47 /* Assets.xcassets */,
 				77DAB8502525DC9800AF6C47 /* LaunchScreen.storyboard */,
 				77DAB8532525DC9800AF6C47 /* Info.plist */,
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				77C187672530677500205502 /* MainTableViewController.swift in Sources */,
+				77BC993D2542F3FD009ED696 /* CalucuratecollectionViewCell.swift in Sources */,
 				77FD457B253BF8BF007774BF /* HeaderView.swift in Sources */,
 				77DAB8482525DC9600AF6C47 /* AppDelegate.swift in Sources */,
 			);

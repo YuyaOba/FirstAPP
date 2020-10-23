@@ -33,7 +33,7 @@ class MainTableViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.register(CaluculateViewCell.self, forCellWithReuseIdentifier: cellID)
+        cv.register(CalucuratecollectionViewCell.self, forCellWithReuseIdentifier: cellID)
         cv.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerID")
 
         cv.contentInset.bottom = 20
@@ -41,41 +41,6 @@ class MainTableViewController: UIViewController {
     }()
     
 
-    
-    //cellの中に入るラベルの作成
-    class CaluculateViewCell: UICollectionViewCell {
-        
-        let numberLabel: UILabel = {
-            let caluculatelabel = UILabel()
-            caluculatelabel.textColor = .white
-            caluculatelabel.textAlignment = .center
-            caluculatelabel.font = .boldSystemFont(ofSize: 32)
-            caluculatelabel.clipsToBounds = true
-            caluculatelabel.backgroundColor = .orange
-            caluculatelabel.text = "1"
-          
-
-            
-            return caluculatelabel
-        }()
-        
-        override init(frame: CGRect) {
-            super.init(frame: frame)
-            addSubview(numberLabel)
-            
-            numberLabel.frame.size = self.frame.size
-            numberLabel.layer.cornerRadius = self.frame.height / 2
-            backgroundColor = .white
-        }
-        
-        required init?(coder aDecoder: NSCoder) {
-            fatalError("init(coder:) has not been implemented")
-        }
-    }
-    
-
-    
-   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -119,7 +84,7 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CaluculateViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CalucuratecollectionViewCell
         
         cell.numberLabel.text = numbers[indexPath.section][indexPath.row]
         return cell
