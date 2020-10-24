@@ -9,11 +9,12 @@
 import UIKit
 
 class HeaderView: UICollectionReusableView {
+    static let headerID = "headerID"
 
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .white
+        self.backgroundColor = .red
     }
     
     required init?(coder aDecoder: NSCoder) {

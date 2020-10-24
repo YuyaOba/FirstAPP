@@ -19,11 +19,11 @@ class MainTableViewController: UIViewController {
     
     //配列の作成
     let numbers = [
-        ["1","2","3","4"],
-        ["1","2","3","4"],
-        ["1","2","3","4"],
-        ["1","2","3","4"],
-        ["1","2","3","4"],
+        ["%引","割引","税"],
+        ["7","8","9"],
+        ["4","5","6"],
+        ["1","2","3"],
+        ["0","00","決","C"],
     ]
     
     //CollectionViewの作成
@@ -43,9 +43,7 @@ class MainTableViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+
         view.addSubview(collectionView)
         view.backgroundColor = .groupTableViewBackground
         
@@ -53,12 +51,11 @@ class MainTableViewController: UIViewController {
         collectionView.backgroundColor = .white
         //collectionView全体の位置を下にしたい。
         
-        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 60).isActive = true
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 200).isActive = true
         collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 0).isActive = true
         collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: 0).isActive = true
         collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0).isActive = true
         collectionView.contentInsetAdjustmentBehavior = .never
-        collectionView.contentInset.bottom = 20
         
         
         collectionView.delegate = self
@@ -110,20 +107,16 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     //header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerID, for: indexPath) as! HeaderView
-        header.frame = CGRect(x: 0, y: 0, width:view.frame.width, height: 20)
-        header.backgroundColor = .blue
-        return header
+    let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerID, for: indexPath) as! HeaderView
+    header.frame = CGRect(x: 0, y: 0, width:view.frame.width, height: 100)
+    header.backgroundColor = .blue
+    return header
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let size = CGSize(width: view.frame.width, height: 20)
+        let size = CGSize(width: view.frame.width, height: 0)
         
         return size
     }
     
-   
-    
-    
 }
-

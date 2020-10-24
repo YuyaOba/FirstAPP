@@ -18,8 +18,6 @@ class CalucuratecollectionViewCell: UICollectionViewCell {
         caluculatelabel.backgroundColor = .orange
         caluculatelabel.text = "1"
         
-        
-        
         return caluculatelabel
     }()
     
@@ -33,9 +31,9 @@ class CalucuratecollectionViewCell: UICollectionViewCell {
         backgroundColor = .white
     }
     
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
 }
-    
 
