@@ -36,7 +36,7 @@ class MainTableViewController: UIViewController {
         cv.register(CalucuratecollectionViewCell.self, forCellWithReuseIdentifier: cellID)
         cv.register(HeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "headerID")
 
-        cv.contentInset.bottom = 20
+        //cv.contentInset.bottom = 5
         return cv
     }()
     
@@ -45,7 +45,8 @@ class MainTableViewController: UIViewController {
         super.viewDidLoad()
 
         view.addSubview(collectionView)
-        view.backgroundColor = .groupTableViewBackground
+        
+    
         
         collectionView.isScrollEnabled = false
         collectionView.backgroundColor = .white
@@ -100,7 +101,7 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10)
     }
     
     
@@ -113,10 +114,16 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
     return header
     }
     
+    //下記のコードの記載のみだと、配列の間位にHeaferがはいっている状態になる。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-        let size = CGSize(width: view.frame.width, height: 0)
         
-        return size
+        if section == 0 {
+            return CGSize(width: self.view.bounds.width, height: 100)
+         
+        } else {
+             return CGSize.zero
+
+        }
     }
     
 }
