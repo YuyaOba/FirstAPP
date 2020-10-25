@@ -69,17 +69,14 @@ class MainTableViewController: UIViewController {
 extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UICollectionViewDelegate{
     
     //cell
+    //Cellの大きさを定義している。
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = (collectionView.frame.width - 3 * 10) / 4
         return .init(width: width, height: width)
     }
     
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        
-        return numbers[section].count
-    }
     
-    
+    //セクションこごとの、それぞれのせCellにいアクセスできるようにしている。
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellID, for: indexPath) as! CalucuratecollectionViewCell
         
@@ -87,17 +84,21 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
         
         numbers[indexPath.section][indexPath.row].forEach { (numberString)in
             
-
+        }
         
-    }
-    
         return cell
     }
     
+    //アイテムの数をセクションごとに画面に返している。
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return numbers[section].count
+    }
     
+    //配列numbersのカウントを返している。
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return numbers.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView,
                         layout collectionViewLayout: UICollectionViewLayout,
@@ -105,11 +106,16 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
         return 0
     }
     
-    
+    //Cellno感覚のコード
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 0, bottom: 10, right: 10)
     }
     
+    //Cellがタップされた時の挙動
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let number = numbers[indexPath.section][indexPath.row]
+        print(number)
+    }
     
     
     //header
