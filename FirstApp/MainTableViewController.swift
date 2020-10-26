@@ -18,12 +18,13 @@ class MainTableViewController: UIViewController {
     
     
     //配列の作成
+    //別のボタンとして認識させたい["%引","割引","税"]は別の定数で作って認識させてPickerを出すようにしたほうがいい？
     let numbers = [
         ["%引","割引","税"],
         ["7","8","9"],
         ["4","5","6"],
         ["1","2","3"],
-        ["0","00","決","C"],
+        ["0","00","C","決"],
     ]
     
     //CollectionViewの作成
@@ -48,7 +49,7 @@ class MainTableViewController: UIViewController {
     
         
         collectionView.isScrollEnabled = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         //collectionView全体の位置を下にしたい。
         
         collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: 90).isActive = true
@@ -83,7 +84,11 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
         cell.numberLabel.text = numbers[indexPath.section][indexPath.row]
         
         numbers[indexPath.section][indexPath.row].forEach { (numberString)in
-            
+            if "0"..."9" ~= numberString {
+                cell.numberLabel.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
+            } else if numberString == "C" {
+                cell.numberLabel.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+            }
         }
         
         return cell
@@ -121,7 +126,7 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
     //header
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerID, for: indexPath) as! HeaderView
-    header.frame = CGRect(x: 0, y: 0, width:view.frame.width, height: 110)
+    header.frame = CGRect(x: 0, y: 0, width:view.frame.width, height: 120)
     
     return header
     }
@@ -130,7 +135,7 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
         
         if section == 0 {
-            return CGSize(width: self.view.bounds.width, height: 110)
+            return CGSize(width: self.view.bounds.width, height: 120)
          
         } else {
              return CGSize.zero

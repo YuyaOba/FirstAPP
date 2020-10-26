@@ -28,7 +28,7 @@ class CalucuratecollectionViewCell: UICollectionViewCell {
         
         numberLabel.frame.size = self.frame.size
         numberLabel.layer.cornerRadius = self.frame.height / 2
-        backgroundColor = .white
+        backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
     }
     
     
