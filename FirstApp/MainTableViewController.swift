@@ -27,6 +27,8 @@ class MainTableViewController: UIViewController {
         ["0","00","C","決"],
     ]
     
+    
+    
     //CollectionViewの作成
     let collectionView: UICollectionView = {
         
@@ -127,8 +129,7 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerID, for: indexPath) as! HeaderView
     header.frame = CGRect(x: 0, y: 0, width:view.frame.width, height: 120)
-        
-        
+    header.backgroundColor = .lightGray
     return header
     }
     
