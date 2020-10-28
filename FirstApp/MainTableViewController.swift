@@ -127,7 +127,8 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
     let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerID, for: indexPath) as! HeaderView
     header.frame = CGRect(x: 0, y: 0, width:view.frame.width, height: 120)
-    
+        
+        
     return header
     }
     
@@ -142,6 +143,7 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
 
         }
     }
+    
     
     
 }
