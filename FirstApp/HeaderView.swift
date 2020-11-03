@@ -19,7 +19,7 @@ class HeaderView: UICollectionReusableView {
         label.font = UIFont.systemFont(ofSize: 75)
         label.layer.position = CGPoint(x: 80, y: 0)
         label.textAlignment = .center
-        
+    
         
         return label
     }()
@@ -31,7 +31,6 @@ class HeaderView: UICollectionReusableView {
         addSubview(headerLabel)
         
         
- 
     }
     
     required init?(coder aDecoder: NSCoder) {

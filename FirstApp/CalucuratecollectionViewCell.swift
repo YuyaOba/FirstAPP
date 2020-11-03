@@ -26,10 +26,18 @@ class CalucuratecollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         addSubview(numberLabel)
         
+        //こうするとnumberLabelのdelegateはHeaderViewになる？
+    
+        
+        
         numberLabel.frame.size = self.frame.size
         numberLabel.layer.cornerRadius = self.frame.height / 2
         backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
+        
+
     }
+    
+    
     
     
     required init?(coder aDecoder: NSCoder) {
