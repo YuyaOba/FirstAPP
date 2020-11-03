@@ -28,6 +28,7 @@ class HeaderView: UICollectionReusableView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         headerLabel.frame.size = self.frame.size
+        
         addSubview(headerLabel)
         
         

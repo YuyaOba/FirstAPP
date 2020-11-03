@@ -53,7 +53,7 @@ class MainTableViewController: UIViewController {
     let selectPicler: UIPickerView = {
         let picker = UIPickerView()
         picker.translatesAutoresizingMaskIntoConstraints = false
-    
+        
         
         return picker
     }()
@@ -123,7 +123,7 @@ extension MainTableViewController: UICollectionViewDelegateFlowLayout, UICollect
         
         cell.numberLabel.text = numbers[indexPath.section][indexPath.row]
         
-        numbers[indexPath.section][indexPath.row].forEach { (numberString)in
+        numbers[indexPath.section][indexPath.row].forEach { (numberString) in
             if "0"..."9" ~= numberString {
                 cell.numberLabel.backgroundColor = #colorLiteral(red: 0.1019607857, green: 0.2784313858, blue: 0.400000006, alpha: 1)
             } else if numberString == "C" {

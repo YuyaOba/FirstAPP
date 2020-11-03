@@ -9,6 +9,18 @@
 import UIKit
 
 class CalucuratecollectionViewCell: UICollectionViewCell {
+    
+    //選択した時に色が変わる
+    override var isHighlighted: Bool {
+        didSet {
+            if isHighlighted {
+                self.numberLabel.alpha = 0.3
+            } else{
+                self.numberLabel.alpha = 1
+            }
+        }
+    }
+    
     let numberLabel: UILabel = {
         let caluculatelabel = UILabel()
         caluculatelabel.textColor = .white
@@ -27,17 +39,12 @@ class CalucuratecollectionViewCell: UICollectionViewCell {
         addSubview(numberLabel)
         
         //こうするとnumberLabelのdelegateはHeaderViewになる？
-    
-        
-        
         numberLabel.frame.size = self.frame.size
         numberLabel.layer.cornerRadius = self.frame.height / 2
         backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         
-
+        
     }
-    
-    
     
     
     required init?(coder aDecoder: NSCoder) {
