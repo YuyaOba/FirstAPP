@@ -10,34 +10,22 @@ import UIKit
 
 class HeaderView: UICollectionReusableView {
     
-    static let headerID = "headerID"
+    let numberHeaderlabel = UILabel()
     
-    private let headerLabel: UILabel = {
-        let label = UILabel()
-        label.text = "12345"
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 75)
-        label.layer.position = CGPoint(x: 80, y: 0)
-        label.textAlignment = .center
-    
-        
-        return label
-    }()
-
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        headerLabel.frame.size = self.frame.size
+        numberHeaderlabel.frame.size = self.frame.size
+        addSubview(numberHeaderlabel)
         
-        addSubview(headerLabel)
-        
-        
+        numberHeaderlabel.text = "123"
+        numberHeaderlabel.textColor = .white
+        numberHeaderlabel.font = UIFont.boldSystemFont(ofSize: 40)
+        numberHeaderlabel.adjustsFontSizeToFitWidth = true
+        numberHeaderlabel.textAlignment = .right
     }
-    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-
-    
+//
 }
